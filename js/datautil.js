@@ -49,7 +49,7 @@ function simplePostData(config) {
 				//location.href="login.html";
 			}
 		} else {
-			toastr.error('服务器错误，请联系管理员！');
+//			toastr.error('服务器错误，请联系管理员！');
 		}
 	})
 }

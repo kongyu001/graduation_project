@@ -7,6 +7,7 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 		"pageNum": 1,
 		"pageSize": 8
 	}
+	
 	//调用以上所有函数
 	$scope.callAllFunctions = function() {
 		$scope.getUserList();
@@ -22,7 +23,6 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 		$scope.getEchartsDataPie1();
 		$scope.getEchartsDataPie2();
 		$scope.getEchartsDataBar();
-
 	}
 
 	//获取用户列表
@@ -377,7 +377,7 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 		$scope.initChart(mainId, chartsOption);
 	}
 
-	//------------------------------------------------配置完毕-----------------------------------------------
+//------------------------------------------------配置完毕-----------------------------------------------
 
 	//获取 第1页的第1个图---数字图的数据,并生成
 	$scope.numberList = new Map();
