@@ -1,0 +1,78 @@
+/*可选列表*/
+.list-group{
+	overflow: auto;
+}
+.list-group-item{
+	cursor: pointer;
+	transition: all 0.2s;
+	white-space: nowrap;
+	overflow: hidden;
+	min-height: 42px;
+}
+.list-group-item:hover{
+	background-color: rgba(0,0,0,0.05);
+}
+/*.list-group-item.active{
+	background-color: #01c0c8;
+	color: #ffffff;
+}*/
+.list-group-item.active, 
+.list-group-item.active:focus,
+.list-group-item.active:hover{
+	background:#01c0c8;
+	border-color:#01c0c8;
+	color: #ffffff;
+	font-weight: bold;
+}
+.list-group-delete{
+	position: absolute;
+	right:10px;
+	top: 13px;
+	display: none;
+	transition: all 0.2s; 
+}
+.list-group-item:hover>.list-group-delete,
+.list-group-item.active>.list-group-delete,
+.list-group-item.active:focus>.list-group-delete,
+.list-group-item.active:hover>.list-group-delete{
+	display: inline !important;
+}
+.list-group-delete:hover{
+	text-shadow: 0 0 7px rgba(255,255,255,0.6);
+	color: #FB3A3A;
+}
+
+/*表格*/
+.table>thead>tr>th{
+	font-size: 13px;
+}
+.table-center>thead>tr>th,
+.table-center>thead>tr>td,
+.table-center>tbody>tr>th,
+.table-center>tbody>tr>td{
+	text-align: center;
+}
+.table td, .table th{
+	padding: 0px;
+}
+
+/*代码编辑器*/
+.CodeMirror{
+	border: 1px solid #dddddd;
+}
+
+/*自定义按钮*/
+.btn-demo.btn-outline{
+	color: #01c0c8;
+    background-color: transparent;
+}
+.btn-demo{
+	background: #01c0c8;
+    border: 1px solid #01c0c8;
+}
+.btn-demo.btn-outline:hover,
+.btn-demo.btn-outline:active,
+.btn-demo.btn-outline:focus{
+	background: #01c0c8;
+	color: #ffffff;
+}

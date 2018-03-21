@@ -12,6 +12,7 @@ function simplePostData(config) {
 	if(config.params!=undefined){
 		url += config.params;
 	}
+	var nonce = $.cookie("nonce");
 	//生成签名
 	var sign = generateSign($.cookie('userId'),nonce,$.cookie("token"));
 	//数据加密处理
@@ -20,15 +21,18 @@ function simplePostData(config) {
 		data = config.encryptFunction(data);
 	}
 	//head信息
-//	var signConfig = {headers : {'Authorization' : $.cookie('userId')+';'+nonce+';'+sign }};
-//	var httpConfig = $.extend(true, config.httpConfig, signConfig);
+	var signConfig = {headers : {'Authorization' : $.cookie('userId')+';'+nonce+';'+sign }};
+	var httpConfig = $.extend(true, config.httpConfig, signConfig);
 	//提交到服务器
 	
 	config.$http({
 		method: method,
 		url: url,
 		data: data,
-		headers: {'Authorization' : $.cookie('userId')+';'+nonce+';'+sign }
+		headers: {
+//			'Authorization' : $.cookie('userId')+';'+nonce+';'+sign 
+			"Content-Type" : "application/x-www-form-urlencoded"
+		}
 	}).success(function(result,status,headers,request) {
 		var errorCode = result.errorCode;
 		if(errorCode == 0) {
@@ -46,10 +50,10 @@ function simplePostData(config) {
 			} else {
 				// 验证错误则重新登录
 				toastr.error('您的登录已超时，请重新登录！');
-				//location.href="login.html";
+				location.href="login.html";
 			}
 		} else {
-//			toastr.error('服务器错误，请联系管理员！');
+			toastr.error('服务器错误，请联系管理员！');
 		}
 	})
 }
@@ -71,7 +75,7 @@ function handleError(result,errorCallbackFunction){
 	
 	switch (errorCode){
 		//token不正确跳到登录页面
-		//case 20002: location.href = "login.html";break;
+		case 20002: location.href = "login.html";break;
 		//无权限显示无权限
 		//case 20003: alert("对不起，您无该操作权限");break;
 		//其他情况显示错误信息，无错误信息显示错误码
@@ -94,7 +98,7 @@ function saveNonce(headers){
 
 /**
  * 生成签名
- */
+ **/
 function generateSign(userId,nouce,token){
 	return CryptoJS.SHA1(token + userId + ":" + nouce)
 }
@@ -126,6 +130,7 @@ function getNonce(authorization){
 /**
  * 向url中添加签名信息
  */
+
 function getSignUrl(url){
 	var sign = generateSign($.cookie('userId'),nonce,$.cookie("token"));
 	return url+'?authorization='+$.cookie('userId')+';'+nonce+';'+sign;

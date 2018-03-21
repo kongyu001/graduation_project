@@ -1,0 +1,59 @@
+<div class=" col-md-12 martop-10">
+	<div class="col-md-2">
+		<div class="btn-group wid-max">
+			<button type="button" class="btn btn-lg btn-default btn-outline btn-rounded dropdown-toggle wid-max" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    	{{clickName}} <span class="caret"></span>
+	  		</button>
+			<ul class="dropdown-menu wid-max">
+				<li ng-repeat="cluster in groups">
+					<a ng-click="groupClick(cluster.cluster_name)">{{cluster.cluster_name}}</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="zTreeDemoBackground left" >
+			<ul id="treeDemo" class="ztree" ></ul>
+		</div>
+
+	</div>
+	<div class="col-md-10" id="database-right">
+		<table class="table color-table table-bordered table-center left-right-margin" cellspacing="0" cellpadding="0" border="1" bordercolor="#000000">
+			<thead border="1" bordercolor="#000000">
+				<tr>
+					<th>字段id</th>
+					<th>字段名称</th>
+					<th>字段内容</th>
+					<th>字段描述</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="content in contents">
+					<td ng-bind="content.id"></td>
+					<td>{{content.name}}</td>
+					<td>{{content.desc}}</td>
+					<td>{{content.cont}}</td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<nav class="dataTables_paginate paging_full_numbers text-center">
+			<ul class="pagination" id="indexTable_paginate">
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="getDataTable()">&laquo;</a>
+				</li>
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="getDataTable(pageParams.pagePrev)">&lsaquo;</a>
+				</li>
+				<li ng-repeat="page in pageParams.pageArray" class="{{ pageParams.pageNum == page?'active':''}}">
+					<a href="" class="first paginate_button paginate_button" tabindex="0" ng-click="getDataTable(page)" ng-bind="page"></a>
+				</li>
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="getDataTable(pageParams.pageNext)">&rsaquo;</a>
+				</li>
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="getDataTable(pageParams.pages)">&raquo;</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>

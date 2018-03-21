@@ -1,0 +1,190 @@
+{
+	"errorCode": 0,
+	"theads": [{"theadName":"a"},{"theadName":"b"},{"theadName":"c"},{"theadName":"d"},{"theadName":"e"}], 
+	"data": [
+		{
+			"series": "A",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		}, {
+			"series": "B",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},
+		{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		},{
+			"series": "C",
+			"content": [
+
+				{
+					"result":"1"
+					
+				}, {
+					"result":"2"
+					
+				}, {
+					"result":"3"
+					
+				}, {
+					"result":"4"
+					
+				},{
+					"result":"5"
+				}
+			]
+		}
+	],
+	"pageNum":1,
+	"pages": 10
+}

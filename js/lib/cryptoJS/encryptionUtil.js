@@ -44,4 +44,4 @@ function getDAesString(encrypted,key){
 function getPwdEncryptStr(str){
 	var len = str.length;
 	return CryptoJS.SHA1(len*len+str+Math.ceil(len*len/10)).toString();
-} 
+}

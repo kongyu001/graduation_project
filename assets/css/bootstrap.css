@@ -3065,7 +3065,15 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
+<<<<<<< HEAD
+<<<<<<< HEAD
   line-height: 1.5;
+=======
+ /* line-height: 1.4;*/
+>>>>>>> origin/dev-kongyu
+=======
+  line-height: 1.5;
+>>>>>>> origin/dev-zhaojing
   border-radius: 3px;
 }
 .btn-block {

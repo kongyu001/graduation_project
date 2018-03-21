@@ -8,7 +8,7 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link href="assets/img/favicon.ico" rel="shortcut icon"/>
 
-    <title>后台-登录</title>
+    <title>query查询平台</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -29,17 +29,12 @@
     <![endif]-->
   </head>
 
-  <body ng-app="guanjiAdminApp" ng-controller="LoginController">
+  <body ng-app="QueryApp" ng-controller="LoginController">
 
-      <!-- **********************************************************************************************************************************************************
-      MAIN CONTENT
-      *********************************************************************************************************************************************************** -->
-
-	  <div id="login-page">
-	  	<div class="container">
-	  	
+	  <!--<div id="login-page">
+	  	<div>-->
 		      <form class="form-login">
-		        <h2 class="form-login-heading">管理后台</h2>
+		        <h2 class="form-login-heading">query查询平台</h2>
 		        <div class="login-wrap">
 		            <input type="text" class="form-control" placeholder="用户名" ng-model="loginForm.userName">
 		            <br>
@@ -56,14 +51,12 @@
 		            <button class="btn btn-theme btn-block" ng-click="logIn(loginForm)" type="submit"><i class="fa fa-lock"></i> 登录</button>
 		
 		        </div>
-		
 		      </form>	  	
-	  	
-	  	</div>
-	  </div>
+	  	<!--</div>
+	  </div>-->
 
     <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="js/lib/jquery.cookie.min.js"></script>
     <!--漂浮消息-->
@@ -86,9 +79,9 @@
 		<script src="js/config.js"></script>
     <script src="js/datautil.js"></script>
 		<script>
-			$.backstretch("assets/img/pexels-photo-295826.jpg", {speed: 500});
-			var app = angular.module('guanjiAdminApp',[]);
-			var nonce = '';
+			$.backstretch("assets/img/login-base.jpg", {speed: 500});
+			var app = angular.module('QueryApp',[]);
+			//var nonce = '';
 			app.controller('LoginController', function($http, $scope) {
 				
 				$scope.loginForm = {};
@@ -99,7 +92,7 @@
 				$scope.getVerifyCode = function(){
 					$scope.loginForm.verifyToken = generateUUID();
 					$scope.loginForm.verifyCodeUrl = HOST_URL+"/verifycode?verifyToken="+$scope.loginForm.verifyToken;
-					$scope.loginForm.verifyCode = '';
+				$scope.loginForm.verifyCode = '';
 				}
 				$scope.getVerifyCode();
 				//$cookies.remove("token");
@@ -122,25 +115,25 @@
 					} else {
 							simplePostData({
 								$http: $http,
-								url: HOST_URL + "/login",
+								url: HOST_URL + "/login",	
 								data: {"data":{
 										userName:getPwdEncryptStr(data.userName),
 										password:getPwdEncryptStr(data.password),
 										verifyCode:data.verifyCode,
-										verifyToken:data.verifyToken
+										verifyToken:$scope.loginForm.verifyToken
 									}
 							},
 								callbackFunction: function(response,status, headers){
 									if(response.errorCode===0){
 										//获取nonce并用nonce解密token
 										var nonce = $scope.getNonce(headers("Authorization-info"));
-										$.cookie("nonce", nonce, {path:"/query_monitor_front"});
-										$.cookie("token", getDAesString(response.data.userToken,nonce), {path:"/query_monitor_front"});
-										$.cookie("realName", getDAesString(response.data.userName,nonce), {path:"/query_monitor_front"});
-										$.cookie("userId", getDAesString(response.data.userId,nonce), {path:"/query_monitor_front"});
+										$.cookie("nonce", nonce, {path:"/petshop_admin"});
+										$.cookie("token", getDAesString(response.data.userToken,nonce), {path:"/petshop_admin"});
+										$.cookie("realName", getDAesString(response.data.userName,nonce), {path:"/petshop_admin"});
+										$.cookie("userId", getDAesString(response.data.userId,nonce), {path:"/petshop_admin"});
 										location.href = "index.html#/";
 									}
-									
+								
 								},
 								errorCallbackFunction: function(response) {
 									$scope.getVerifyCode();

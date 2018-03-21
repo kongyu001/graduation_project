@@ -1,17 +1,21 @@
-var nonce = $.cookie('nonce');
-var app =angular.module("QueryMonitorApp",["ui.router", "ngCookies"]);
-    app.config(function($stateProvider,$urlRouterProvider){
-        $stateProvider
-        .state("day",{
-        	url:"/",
-        	templateUrl:"pages/day.html",
+var app =angular.module('QueryApp',['ngRoute', 'ngCookies']);
+    app.config(function($routeProvider){
+        $routeProvider
+        .when('/',{
+        	templateUrl:"pages/query.html",
         	controller:"QueryController"
         })
-        .state("month",{
-        	url:"/month",
+        .when('/dataBase',{
+        	templateUrl:"pages/dataBase.html",
+        	controller:"DataBaseController"
+        })
+        .when('/dashboard',{
+        	templateUrl:"pages/dashboard.html",
+        	controller:"DashboardController"
+        })
+         .when('/day',{
         	templateUrl:"pages/day.html",
-        	controller:"QueryController"
-        });
-        $urlRouterProvider.otherwise("/")
+        	controller:"DayController"
+        })
+        .otherwise({redirectTo:'/'});
     });
-    

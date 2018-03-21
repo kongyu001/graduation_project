@@ -1,0 +1,32 @@
+<div ng-cloak>
+<div class=" col-md-12 martop-10">
+	<!--图表一-->
+	<div class="col-md-12">
+		<span class="glyphicon glyphicon-chevron-left dib page-icon hover" ng-click="showEchart1(pageParams.pagePrev)"></span>
+			<div id="main1" class="echarts-1 dib"></div>
+		<span class="glyphicon glyphicon-chevron-right dib page-icon hover" ng-click="showEchart1(pageParams.pageNext)"></span>
+	</div>
+	<div class="year-month-day">
+		<button id="btn-1" class="btn-time  btn-success btn-outline btn-rounded  dib active" ng-click="showEchart1($event)">年</button>
+		<button class="btn-time  btn-success btn-outline btn-rounded  dib" ng-click="showEchart1($event,month)">月</button>
+		<button class="btn-time  btn-success btn-outline btn-rounded dib" ng-click="showEchart1($event,day)">日</button>
+	</div>
+</div>
+<div class=" col-md-12 martop-10">
+<!--图表二-->
+	<div class="col-md-12" style="padding-top: 20px;">
+		<span class="glyphicon glyphicon-chevron-left dib page-icon hover" ng-click="showEchart2(pageParams.pagePrev)"></span>
+		<div id="main2" class="echarts-2 dib"></div>
+		<span class="glyphicon glyphicon-chevron-right dib page-icon hover" ng-click="showEchart2(pageParams.pageNext)"></span>
+	</div>
+	<div class="year-month-day">
+		<button id="btn-4" class="btn-time  btn-success btn-outline btn-rounded btn-blank dib active" ng-click="showEchart2()">年</button>
+		<button class="btn-time  btn-success btn-outline btn-rounded btn-blank dib " ng-click="showEchart2()">月</button>
+		<button class="btn-time  btn-success btn-outline btn-rounded btn-blank dib" ng-click="showEchart2()">日</button>
+	</div>
+</div>
+
+</div>
+
+
+
