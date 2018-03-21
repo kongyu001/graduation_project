@@ -1,10 +1,10 @@
 <div class="row" ng-cloak>
 	<div class="dropdown drop-style">
-		<!--<label class="control-label">筛选用户:</label>-->
-		<!--<select id="userList" class="col-md-2" data-live-search="true" ng-model="countStatForm.userNameList" multiple>
+		<label class="control-label">筛选用户:</label>
+		<select id="userList" class="col-md-2" data-live-search="true" ng-model="countStatForm.userNameList" multiple>
 			<option ng-repeat="userName in userList" value="{{userName}}">{{userName}}</option>
-		</select>-->
-		<!--<a class="btn btn-primary" href="javascript:;" ng-click="callAllFunctions()">查询</a>-->
+		</select>
+		<a class="btn btn-primary" href="javascript:;" ng-click="callAllFunctions()">查询</a>
 	</div>
 
 	<div class="col-lg-8 col-md-8 main-chart padding-100">
@@ -84,17 +84,17 @@
 					</tr>
 					<tr>
 						<th class="text-center">列总计</th>
-						<th class="text-center">1231</th>
-						<th class="text-center">32131</th>
-						<th class="text-center">1321</th>
+						<th class="text-center">{{normalAll}}</th>
+						<th class="text-center">{{slowAll}}</th>
+						<th class="text-center">{{longAll}}</th>
 					</tr>
 				</thead>
 				<tbody class="tbody-border">
 					<tr ng-repeat="user in list">
 						<td ng-bind="user.userName" align="center"></td>
-						<td align="center" ng-bind="{{user.normalCnt}}"></td>
-						<td align="center" ng-bind="{{user.slowCnt}}"></td>
-						<td align="center" ng-bind="{{user.tooLongCnt}}"></td>
+						<td align="center" ng-bind="user.normalCnt"></td>
+						<td align="center" ng-bind="user.slowCnt"></td>
+						<td align="center" ng-bind="user.tooLongCnt"></td>
 					</tr>
 				</tbody>
 			</table>

@@ -7,7 +7,6 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 		"pageNum": 1,
 		"pageSize": 8
 	}
-	
 	//调用以上所有函数
 	$scope.callAllFunctions = function() {
 		$scope.getUserList();
@@ -183,6 +182,7 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 			},
 			tooltip: {
 				trigger: 'axis',
+				formatter: "{b} : {c}",
 				axisPointer: {
 					type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
 				}
@@ -377,10 +377,11 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 		$scope.initChart(mainId, chartsOption);
 	}
 
-//------------------------------------------------配置完毕-----------------------------------------------
+	//------------------------------------------------配置完毕-----------------------------------------------
 
 	//获取 第1页的第1个图---数字图的数据,并生成
 	$scope.numberList = new Map();
+	
 	$scope.getNumberData = function(numberUrl) {
 		simplePostData({
 			"$http": $http,
@@ -408,10 +409,13 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 				"data": $scope.countStatForm
 			},
 			"callbackFunction": function(response) {
+				if(response.data.length == 0) {
+					$('#main12').css("visibility", "hidden");
+				} else {
+					$('#main12').css("visibility", "visible");
 				chartLineLegend = response.data.legend;
 				chartLinexAxis = response.data.xAxis;
 				chartLineSeries = response.data.series;
-
 				chartConfig = {
 					legendData: chartLineLegend,
 					xAxisData: chartLinexAxis,
@@ -437,7 +441,7 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 						smooth: true
 					}]
 				}
-				$scope.configEchartDataLine(12, chartConfig);
+				$scope.configEchartDataLine(12, chartConfig);}
 			}
 		});
 	}
@@ -453,9 +457,12 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 				"data": $scope.countStatForm
 			},
 			"callbackFunction": function(response) {
+				if(response.data.length == 0) {
+					$('#main13').css("visibility", "hidden");
+				} else {
+					$('#main13').css("visibility", "visible");
 				chartConfig = response.data;
-
-				$scope.configEchartDataDot(13, chartConfig);
+				$scope.configEchartDataDot(13, chartConfig);}
 			}
 		});
 	}
@@ -471,10 +478,14 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 				"data": $scope.countStatForm
 			},
 			"callbackFunction": function(response) {
+				if(response.data.length == 0) {
+					$('#main21').css("visibility", "hidden");
+				} else {
+					$('#main21').css("visibility", "visible");
 				errorCnt = response.data[0].errorCnt;
 				succCnt = response.data[0].succCnt;
 				emptyCnt = response.data[0].emptyCnt;
-				$scope.configEchartDataPie1(21, errorCnt, succCnt, emptyCnt);
+				$scope.configEchartDataPie1(21, errorCnt, succCnt, emptyCnt);}
 			}
 		});
 	}
@@ -490,6 +501,10 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 				"data": $scope.countStatForm
 			},
 			"callbackFunction": function(response) {
+				if(response.data.length == 0) {
+					$('#main21').css("visibility", "hidden");
+				} else {
+					$('#main21').css("visibility", "visible");
 				chartLineLegend = response.data.legend;
 				chartLinexAxis = response.data.xAxis;
 				chartLineSeries = response.data.series;
@@ -514,7 +529,7 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 						smooth: true
 					}]
 				}
-				$scope.configEchartDataLine(22, chartConfig);
+				$scope.configEchartDataLine(22, chartConfig);}
 			}
 		});
 	}
@@ -531,6 +546,21 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 			},
 			"callbackFunction": function(response) {
 				$scope.list = response.data;
+				var allNormalCnt = response.data.map(function(a){
+					return a.normalCnt;
+				});
+				var allLongCnt=response.data.map(function(a){
+					return a.tooLongCnt;
+				});
+				var allSlowCnt=response.data.map(function(a){
+					return a.slowCnt;
+				})
+				$scope.normalAll=$scope.longAll=$scope.slowAll=0
+				for (var i=0;i<allNormalCnt.length;i++) {
+					$scope.normalAll+=parseInt(allNormalCnt[i]);
+					$scope.longAll+=parseInt(allLongCnt[i]);
+					$scope.slowAll+=parseInt(allSlowCnt[i]);
+				}
 			}
 		});
 	}
@@ -546,11 +576,10 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 				"data": $scope.countStatForm
 			},
 			"callbackFunction": function(response) {
-//				console.log(response.data)
 				if(response.data.length == 0) {
-					console.log("no data")
-					toastr.error("当日暂无数据!")
+					$('#main31').css("visibility", "hidden");
 				} else {
+					$('#main31').css("visibility", "visible");
 					chartConfig = {
 						data: response.data
 					}
@@ -571,12 +600,18 @@ app.controller('QueryController', function($rootScope,$scope, $http, $state, $co
 				"data": $scope.countStatForm
 			},
 			"callbackFunction": function(response) {
-				console.log(response.data.xAxis);
 				if(response.data.xAxis.length == 0) {
 					console.log("no data")
-//					toastr.error("当日暂无数据!")
+					$scope.dataMax=0;
+					$('#main32').css("visibility", "hidden");
+					chartConfig = {
+						yAxisData: [response.data.xAxis],
+						xAxisData: [],
+					}
+					$scope.configEchartDataBar(32, chartConfig);
 				} else {
-					$scope.dataMax = response.data.series[0].data[4];
+					$('#main32').css("visibility", "visible");
+					$scope.dataMax = response.data.series[0].data[response.data.series[0].data.length - 1];
 					chartConfig = {
 						yAxisData: response.data.xAxis,
 						xAxisData: response.data.series[0].data,
