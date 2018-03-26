@@ -23,10 +23,11 @@
     <!-- color CSS -->
     <link href="assets/css/colors/megna.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    
 	<!--angularJS-->
     <script src="js/lib/angular.min.js"></script>
 	<script src="js/lib/angular-cookies.min.js"></script>
+	<script src="js/lib/angular-ui-router.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/lib/angular-route.js" type="text/javascript" charset="utf-8"></script>
 	
 	<!--code-->
@@ -93,25 +94,25 @@
                         </div>
                     </li>
                     <li> 
-                    	<a href="#/query" class="waves-effect" ng-class="getNavItemClass('/query')">
+                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/query')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >实时查询</span>
                     	</a> 
                     </li>
                     <li> 
-                    	<a href="#/dataBase" class="waves-effect" ng-class="getNavItemClass('/dataBase')">
+                    	<a href="" ui-sref="2" class="waves-effect" ng-class="getNavItemClass('/dataBase')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >数据库</span>
                     	</a> 
                     </li>
                     <li> 
-                    	<a href="#/dashboard" class="waves-effect" ng-class="getNavItemClass('/dashboard')">
+                    	<a href="" ui-sref="3" class="waves-effect" ng-class="getNavItemClass('/dashboard')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >dashboard</span>
                     	</a> 
                     </li>
                     <li> 
-                    	<a href="#/day" class="waves-effect" ng-class="getNavItemClass('/day')">
+                    	<a href=""  ui-sref="4" class="waves-effect" ng-class="getNavItemClass('/day')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >day</span>
                     	</a> 
@@ -125,9 +126,9 @@
         <!-- Page Content -->
         <div id="page-wrapper">
         	<div ng-cloak>
-            <div class="container-fluid">
-            	<div ng-view></div>
-            </div>
+	            <div class="container-fluid">
+	            	<div ng-view></div>
+	            </div>
         	</div>
             <!-- /.container-fluid -->
             <footer class="footer text-center"> 2017 &copy; Elite Admin brought to you by themedesigner.in </footer>
@@ -169,7 +170,7 @@
     <!--Wave Effects -->
     <script src="js/old_custom/waves.js"></script>
     <!--确认框-->
-    <script src="assets/sweetalert/sweetalert.min.js"></script>
+    <!--<script src="assets/sweetalert/sweetalert.min.js"></script>-->
     <!-- Custom Theme JavaScript -->
     <script src="js/old_custom/custom.min.js"></script>
     <!--加密组件-->
@@ -190,9 +191,9 @@
 	<!--controller-->
 	<script src="js/controller/indexController.js"></script>
 	<script src="js/controller/queryController.js"></script>
-	<script src="js/controller/dataBaseController.js"></script>
+	<!--<script src="js/controller/dataBaseController.js"></script>
 	<script src="js/controller/dashboardController.js"></script>
-	<script src="js/controller/dayController.js"></script>
+	<script src="js/controller/dayController.js"></script>-->
 </body>
 
 </html>
