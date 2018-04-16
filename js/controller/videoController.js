@@ -1,0 +1,1 @@
+app.controller('VideoController', function($scope, $http, $cookies) {})

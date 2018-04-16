@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon.png">
-    <title>Query查询平台</title>
+    <title>graduation</title>
+    
     <!-- Bootstrap Core CSS -->
     <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
@@ -94,27 +95,27 @@
                         </div>
                     </li>
                     <li> 
-                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/query')">
+                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/weibo')">
                     		<i class="ti-dashboard p-r-10"></i> 
-                    		<span class="hide-menu" >实时查询</span>
+                    		<span class="hide-menu" >微博</span>
                     	</a> 
                     </li>
                     <li> 
-                    	<a href="" ui-sref="2" class="waves-effect" ng-class="getNavItemClass('/dataBase')">
+                    	<a href="" ui-sref="2" class="waves-effect" ng-class="getNavItemClass('/game')">
                     		<i class="ti-dashboard p-r-10"></i> 
-                    		<span class="hide-menu" >数据库</span>
+                    		<span class="hide-menu" >游戏</span>
                     	</a> 
                     </li>
                     <li> 
-                    	<a href="" ui-sref="3" class="waves-effect" ng-class="getNavItemClass('/dashboard')">
+                    	<a href="" ui-sref="3" class="waves-effect" ng-class="getNavItemClass('/music')">
                     		<i class="ti-dashboard p-r-10"></i> 
-                    		<span class="hide-menu" >dashboard</span>
+                    		<span class="hide-menu" >在线音乐</span>
                     	</a> 
                     </li>
                     <li> 
-                    	<a href=""  ui-sref="4" class="waves-effect" ng-class="getNavItemClass('/day')">
+                    	<a href=""  ui-sref="4" class="waves-effect" ng-class="getNavItemClass('/video')">
                     		<i class="ti-dashboard p-r-10"></i> 
-                    		<span class="hide-menu" >day</span>
+                    		<span class="hide-menu" >在线视频</span>
                     	</a> 
                     </li>
                     <li class="nav-small-cap m-t-10">
@@ -127,11 +128,11 @@
         <div id="page-wrapper">
         	<div ng-cloak>
 	            <div class="container-fluid">
-	            	<div ng-view></div>
+	            	<div ui-view></div>
 	            </div>
         	</div>
             <!-- /.container-fluid -->
-            <footer class="footer text-center"> 2017 &copy; Elite Admin brought to you by themedesigner.in </footer>
+            <!--<footer class="footer text-center"> 2017 &copy; Elite Admin brought to you by themedesigner.in </footer>-->
         </div>
         <!-- /#page-wrapper -->
     </div>
@@ -190,6 +191,10 @@
 	<script src="js/datautil.js"></script>
 	<!--controller-->
 	<script src="js/controller/indexController.js"></script>
+	<script src="js/controller/weiboController.js"></script>
+	<script src="js/controller/gameController.js"></script>
+	<script src="js/controller/musicController.js"></script>
+	<script src="js/controller/videoController.js"></script>
 	<script src="js/controller/queryController.js"></script>
 	<!--<script src="js/controller/dataBaseController.js"></script>
 	<script src="js/controller/dashboardController.js"></script>

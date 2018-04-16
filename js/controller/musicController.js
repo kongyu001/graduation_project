@@ -1,0 +1,1 @@
+app.controller('MusicController', function($scope, $http, $cookies) {})

@@ -1,0 +1,1 @@
+app.controller('WeiBoController', function($scope, $http, $cookies) {})
