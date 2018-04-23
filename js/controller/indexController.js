@@ -11,13 +11,13 @@ app.controller('IndexController', function($rootScope,$scope, $http, $location,$
 		return "";
 	};
 	
-	$scope.fiveMintesQuery=function(){
-		$rootScope.queryType=0
-	}
-	
-	$scope.monthMintesQuery=function(){
-		$rootScope.queryType=1
-	}
+//	$scope.fiveMintesQuery=function(){
+//		$rootScope.queryType=0
+//	}
+//	
+//	$scope.monthMintesQuery=function(){
+//		$rootScope.queryType=1
+//	}
 	//登出操作
 	$scope.logout = function() {
 		simplePostData({
