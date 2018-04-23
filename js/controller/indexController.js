@@ -3,6 +3,7 @@ app.controller('IndexController', function($rootScope,$scope, $http, $location,$
 		var url = $location.url();
 		if(url == "/") {
 			url = "/weibo";
+			console.log(1)
 		}
 		if(url == path) {
 			//TODO: 加载页面时会频繁触发，为什么？

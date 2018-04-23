@@ -56,13 +56,13 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="index.html"><b><img src="assets/img/logo.png" alt="home" width="50" /></b><span class="hidden-xs"><strong>giraffe</strong></span></a></div>
+                <div class="top-left-part"><a class="logo" href="index.html"><b><img src="assets/img/logo.png" alt="home" width="50" /></b><span class="hidden-xs"><strong>LOOKer</strong></span></a></div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-                    <li>
+                    <!--<li>
                         <form role="search" class="app-search hidden-xs">
                             <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
-                    </li>
+                    </li>-->
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li class="dropdown">
@@ -95,7 +95,7 @@
                         </div>
                     </li>
                     <li> 
-                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/')">
+                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/weibo')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >微博</span>
                     	</a> 
@@ -126,7 +126,7 @@
         <!-- Left navbar-header end -->
         <!-- Page Content -->
         <div id="page-wrapper">
-        	<div ng-cloak>
+        	<div  ng-cloak>
 	            <div class="container-fluid">
 	            	<div ui-view></div>
 	            </div>

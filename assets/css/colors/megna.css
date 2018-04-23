@@ -53,7 +53,11 @@ body {
   color: #ffffff;
 }
 .navbar-header {
-  background: #6458bd;
+  background: -webkit-gradient(linear, 0 0, 100% 0, from(#6458bd), color-stop(0.5, #9370DB), to(#8E388E));
+  background: -webkit-linear-gradient(to left, #6458bd, #9370DB, #8E388E);
+  background: -moz-linear-gradient(to left, #6458bd, #9370DB, #8E388E);
+  background: -o-linear-gradient(to left, #6458bd, #9370DB, #8E388E);
+  background: linear-gradient(to left, #6458bd, #9370DB, #8E388E);
 }
 .navbar-top-links > li > a {
   color: #ffffff;
@@ -68,21 +72,24 @@ body {
 }
 /*Sidebar*/
 .sidebar {
-  background: #fff;
+  /*background: #fff;*/
+ background: linear-gradient(to left, #6458bd, #8E388E);
   box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.08);
 }
 .sidebar .label-custom {
   background: #01c0c8;
 }
 #side-menu li a {
-  color: #54667a;
+  color: #FFFFFF;
 }
 #side-menu li a {
 	font-size: 16px;
-  color: #54667a;
+  color: #fff;
   border-left: 0px solid #fff;
 }
-#side-menu > li > a:hover,
+#side-menu > li > a:hover{
+	background: #6458bd;
+}
 #side-menu > li > a:focus {
   background: rgba(0, 0, 0, 0.03);
 }
