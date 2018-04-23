@@ -1,4 +1,4 @@
-app.controller('WeiBoController', function($scope, $http, $cookies) {
+app.controller('WeiBoController', function($scope, $http, $cookies,$cookieStore) {
 
 	// 百度地图API功能
 	var map = new BMap.Map("map", {
@@ -147,8 +147,15 @@ app.controller('WeiBoController', function($scope, $http, $cookies) {
 		}]
 	});
 
+
+
+
+
+
+
 	$.get('data/weibo.json', function(rs) {
 		console.log(rs);
+		$cookieStore.put('weibo','rs')
 		var data1 = [];
 		var data2 = [];
 		var data3 = [];
@@ -186,14 +193,6 @@ app.controller('WeiBoController', function($scope, $http, $cookies) {
 
 		var dataSet = new mapv.DataSet(data1);
 		var options = {
-//			legend: {
-//				orient: 'vertical',
-//				x: 'left',
-//				data: ['强', '中', '弱'],
-//				textStyle: {
-//					color: '#fff'
-//				}
-//			},
 			fillStyle: 'rgba(37, 140, 249, 0.8)',
 			bigData: 'Point',
 			size: 0.7,
