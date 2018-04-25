@@ -1,11 +1,13 @@
-app.controller('WeiBoController', function($scope, $http, $cookies,$cookieStore) {
+app.controller('WeiBoController', function($scope, $http, $cookies, $cookieStore) {
 
 	// 百度地图API功能
 	var map = new BMap.Map("map", {
-		enableMapClick: false
+		enableMapClick: true,
+		title:'asdasdadsa'
+		
 	}); // 创建Map实例
 	map.centerAndZoom(new BMap.Point(105.403119, 38.028658), 5); // 初始化地图,设置中心点坐标和地图级别
-	map.enableScrollWheelZoom(true); // 开启鼠标滚轮缩放
+	map.enableScrollWheelZoom(false); // 开启鼠标滚轮缩放
 
 	// 地图自定义样式
 	map.setMapStyle({
@@ -147,15 +149,9 @@ app.controller('WeiBoController', function($scope, $http, $cookies,$cookieStore)
 		}]
 	});
 
-
-
-
-
-
-
 	$.get('data/weibo.json', function(rs) {
 		console.log(rs);
-		$cookieStore.put('weibo','rs')
+		$cookieStore.put('weibo', 'rs')
 		var data1 = [];
 		var data2 = [];
 		var data3 = [];
@@ -190,6 +186,30 @@ app.controller('WeiBoController', function($scope, $http, $cookies,$cookieStore)
 				},
 			});
 		}
+//
+		var text1 = {
+			geometry: {
+					type: 'Point',
+					coordinates: geoCoord
+				},
+			text:'asdoiuahdoiuahdo'
+		}
+
+		var dataSet = new mapv.DataSet(text1);
+		var options = {
+			draw: 'text',
+			fillStyle: '#33ccff',
+//			size:12,
+			 font: '25px Arial',
+			textAlign: 'top',
+			avoid: true, // 开启文本标注避让
+			textBaseline: 'middle',
+			offset: { // 文本便宜值
+				x: -100,
+				y: -100
+			}
+		}
+		var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
 
 		var dataSet = new mapv.DataSet(data1);
 		var options = {
@@ -236,11 +256,5 @@ app.controller('WeiBoController', function($scope, $http, $cookies,$cookieStore)
 		}
 		var mapvLayer = new mapv.baiduMapLayer(map, dataSet, options);
 	});
-	
-	
-	
-	
-	
-	
-	
+
 })
