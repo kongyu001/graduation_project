@@ -20,6 +20,11 @@ var app =angular.module('QueryApp',['ui.router', 'ngCookies']);
         	url:"/video",
         	templateUrl:"pages/video.html",
         	controller:"VideoController"
+        })
+         .state("5",{
+        	url:"/input",
+        	templateUrl:"pages/video.html",
+        	controller:"VideoController"
         });
         $urlRouterProvider.otherwise("/")
 

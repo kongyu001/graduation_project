@@ -1,177 +1,307 @@
 /*所有类似query-1-1的命名,意义为query的第*页的第*个图*/
+
 .main-chart {
 	padding-top: 20px;
 }
+
+
 /*Content Panel*/
+
 .content-panel {
 	background: #ffffff;
 	box-shadow: 0px 3px 2px #aab2bd;
 	padding-top: 15px;
 	padding-bottom: 5px;
 }
-.drop-style{
+
+.drop-style {
 	margin-top: 5px;
-	margin-left:12px;	
+	margin-left: 12px;
 }
 
-.box-title{
+.box-title {
 	margin-left: 20px;
 	top: 20px;
 	font-size: 16px;
 	color: #000000;
 }
 
-.padding-100{
-	padding-left:10px;
-	padding-right:0px;
+.padding-100 {
+	padding-left: 10px;
+	padding-right: 0px;
 }
 
-.padding-10{
-	padding-left:10px;
+.padding-10 {
+	padding-left: 10px;
 }
 
-.padding-00{
-	padding-left:0px;
-	padding-right:0px;
+.padding-00 {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
-.padding-05{
-	padding-left:0px;
-	padding-right:5px;
+.padding-05 {
+	padding-left: 0px;
+	padding-right: 5px;
 }
 
-.padding-r5{
-	padding-right:5px;
+.padding-r5 {
+	padding-right: 5px;
 }
 
-.padding-5{
-	padding-left:5px;
+.padding-5 {
+	padding-left: 5px;
 }
 
-.box1-content{
+.box1-content {
 	font-size: 35px;
 	padding: 20px;
 }
-.color-1{
+
+.color-1 {
 	color: #8a09d8;
 }
-.color-2{
+
+.color-2 {
 	color: #96C93C;
 }
-.color-3{
+
+.color-3 {
 	color: #FFCF00;
 }
 
-.color-4{
+.color-4 {
 	color: #f90404;
 }
 
-.panel-title{
-	margin-left: 20px;	
+.panel-title {
+	margin-left: 20px;
 	margin-top: 20px;
 }
-.max-data-1{
+
+.max-data-1 {
 	margin-top: -7px;
-	margin-right: 20px;	
+	margin-right: 20px;
 	font-size: 30px;
 	font-weight: 300;
 	display: block;
-	width:40px;
+	width: 40px;
 }
-.max-data-2{
-	margin-right: 10px;	
+
+.max-data-2 {
+	margin-right: 10px;
 	margin-top: 8px;
-	width:44px;
+	width: 44px;
 	display: block;
 }
 
-.link-icon{
+.link-icon {
 	margin-right: 5px;
 }
 
-.query-1-1{
+.query-1-1 {
 	margin-top: -10px;
 	width: 100%;
-	height:150px;
+	height: 150px;
 }
 
-.query-1-2{
+.query-1-2 {
 	margin-top: 5px;
-	width: 100%;
+	width:100%;
 	height: 445px;
 }
 
-.query-1-3 {
-	margin-top: 10px;
-	/*margin-left: -20px;*/
+
+.query-2-1 {
+	margin-top: 5px;
 	width: 100%;
-	height: 600px;
+	height:600px;
 }
 
-.query-2-1{
-	margin-top: 5px;
+
+.query-2-3 {
+	margin-top: 25px;
 	width: 100%;
 	height: 300px;
 }
 
-.query-2-2{
-	margin-top: 5px;
-	width: 100%;
-	height: 300px;
-	overflow: hidden;
-}
-
-.query-2-3{
-	margin-top: 5px;
-	width: 100%;
-	height: 300px;
-}
-
-.query-3-1{
+.query-3-1 {
 	margin-top: 5px;
 	width: 100%;
 	height: 320px;
 }
 
-.query-3-2{
+.query-3-2 {
 	margin-top: 5px;
 	width: 100%;
 	height: 340px;
 }
 
-.query-3-3{
+.query-3-3 {
 	margin-top: 5px;
 	width: 100%;
 	height: 665px;
 }
 
-.echarts-1{
+.echarts-1 {
 	height: 100%;
 	width: 100%;
+	font-family: 'Open Sans', sans-serif;
 }
 
-.echarts-2{
+.echarts-2 {
 	height: 100%;
 	width: 100%;
 	margin-left: 10px;
 }
 
-.echarts-3{
+.echarts-3 {
 	height: 100%;
 	width: 100%;
 	margin-left: 20px;
 	margin-top: -30px;
 }
 
-.echarts-4{
+.echarts-4 {
 	width: 100%;
 	height: 280px;
-	margin-left: 10px;	
+	margin-left: 10px;
 }
 
-.map-weibo{
-	width:100%;
+.map-weibo {
+	width: 100%;
 	height: 600px;
 	overflow: hidden;
 }
-.anchorBL{display:none}
+
+.anchorBL {
+	display: none
+}
+
+
+/*选项卡*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=latin,latin-ext);
+body {
+	overflow-y: scroll;
+}
+
+.wrap {
+	margin-left: 15px;
+	width: 96%;
+}
+
+ul.tabs {
+	width: 100%;
+	height: 70px;
+	margin: 0 auto;
+	list-style: none;
+	overflow: hidden;
+	padding: 0;
+}
+
+ul.tabs li {
+	float: left;
+	width: 50%;
+}
+
+ul.tabs li a {
+	position: relative;
+	display: block;
+	height: 60px;
+	margin-top: 20px;
+	padding: 15px 0 0 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	background: #545f60;
+	-webkit-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+	box-shadow: 8px 12px 25px 2px rgba(0, 0, 0, 0.4);
+	border: 0px solid #000000;
+	-webkit-transition: padding 0.2s ease, margin 0.2s ease;
+	-moz-transition: padding 0.2s ease, margin 0.2s ease;
+	-o-transition: padding 0.2s ease, margin 0.2s ease;
+	-ms-transition: padding 0.2s ease, margin 0.2s ease;
+	transition: padding 0.2s ease, margin 0.2s ease;
+}
+
+.tabs li:first-child a {
+	z-index: 3;
+	-webkit-border-top-left-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	border-top-left-radius: 8px;
+}
+
+.tabs li:nth-child(2) a {
+	z-index: 2;
+}
+
+.tabs li:last-child a {
+	z-index: 1;
+	-webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-right-radius: 8px;
+}
+
+ul.tabs li a:hover {
+	margin: 35px 0 0 0;
+	padding: 10px 0 5px 0;
+}
+
+ul.tabs li a.active {
+	margin: 20px 0 0 0;
+	padding: 15px 0 10px 0;
+	/*background: #6458bd;*/
+	 background: linear-gradient(to left, #6458bd, #9370DB, #8E388E);
+	color: #6edeef;
+	/*color: #ff6831;*/
+	z-index: 4;
+	outline: none;
+}
+
+.group:before,
+.group:after {
+	content: " ";
+	/* 1 */
+	display: table;
+	/* 2 */
+}
+
+.group:after {
+	clear: both;
+}
+
+#content {
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+	background: #FFFFFF;
+	-webkit-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+	box-shadow: 2px 8px 25px -2px rgba(0, 0, 0, 0.3);
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	padding: 40px 40px;
+	color: #ffffff;
+	line-height: 26px;
+	font-size: 18px;
+	margin: 0;
+}
+
+#weibo1 {}
+
+#weibo2 {}

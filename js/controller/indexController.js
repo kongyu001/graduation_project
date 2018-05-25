@@ -1,12 +1,12 @@
 app.controller('IndexController', function($rootScope,$scope, $http, $location,$cookies) {
 	$scope.getNavItemClass = function(path) {
 		var url = $location.url();
-		console.log(url)
+//		console.log(url)
 		if(url === "/") {
 			url = "/weibo";	
 		
 		}
-		console.log(url)
+//		console.log(url)
 		if(url == path) {
 			//TODO: 加载页面时会频繁触发，为什么？
 			return "active";
