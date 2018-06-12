@@ -53,7 +53,7 @@ function simplePostData(config) {
 				location.href="login.html";
 			}
 		} else {
-			toastr.error('服务器错误，请联系管理员！');
+			toastr.error('正在加载，请稍后！');
 		}
 	})
 }
@@ -83,7 +83,7 @@ function handleError(result,errorCallbackFunction){
 			if(errorInfo !=null && errorInfo != "") {
 				toastr.error("错误: " + errorInfo);
 			} else {
-				toastr.error("错误: " + errorCode);
+//				toastr.error("错误: " + errorCode);
 			}
 			break;
 	}

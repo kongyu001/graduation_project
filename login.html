@@ -29,7 +29,7 @@
     <![endif]-->
   </head>
 
-  <body ng-app="QueryApp" ng-controller="LoginController">
+  <body ng-app="LOOKerApp" ng-controller="LoginController">
 
 	  <!--<div id="login-page">
 	  	<div>-->
@@ -80,7 +80,7 @@
     <script src="js/datautil.js"></script>
 		<script>
 			$.backstretch("assets/img/login-base.jpg", {speed: 500});
-			var app = angular.module('QueryApp',[]);
+			var app = angular.module('LOOKerApp',[]);
 			//var nonce = '';
 			app.controller('LoginController', function($http, $scope) {
 				
@@ -89,12 +89,12 @@
 					//根据响应头中的authorizationInfo获取nouce
 					return authorization.split("=")[1];
 				}
-				$scope.getVerifyCode = function(){
-					$scope.loginForm.verifyToken = generateUUID();
-					$scope.loginForm.verifyCodeUrl = HOST_URL+"/verifycode?verifyToken="+$scope.loginForm.verifyToken;
-				$scope.loginForm.verifyCode = '';
-				}
-				$scope.getVerifyCode();
+//				$scope.getVerifyCode = function(){
+//					$scope.loginForm.verifyToken = generateUUID();
+//					$scope.loginForm.verifyCodeUrl = HOST_URL+"/verifycode?verifyToken="+$scope.loginForm.verifyToken;
+//				$scope.loginForm.verifyCode = '';
+//				}
+//				$scope.getVerifyCode();
 				//$cookies.remove("token");
 				
 				$scope.checkInput = function(data){
@@ -108,7 +108,8 @@
 						return false;
 				}
 				//初始化基本信息
-				$scope.logIn = function(data) {
+				$scope.logIn = function() {
+					window.location.href = "index.html";
 					var msg = $scope.checkInput(data);
 					if(msg){
 						toastr.info(msg);

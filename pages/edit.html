@@ -1,0 +1,67 @@
+<div class="col-md-12 " id="query-container">
+	
+	<div class=" col-md-9 col-lg-10 martop-10" id="query-right">
+		<button class="btn btn-sm btn-demo btn-outline btn-rounded dib" ng-click="execute('bar')">柱状图</button>
+		<button class="btn btn-sm btn-demo btn-outline btn-rounded dib" ng-click="execute('line')">折线图</button>
+		<button class="btn btn-sm btn-demo btn-outline btn-rounded dib" ng-click="execute('scatter')">点图	</button>
+		<!--<button class="btn btn-sm btn-demo btn-outline btn-rounded dib pull-right" style="margin-left: 20px;" ng-click="save(query)">保存</button>-->
+		<input type="text" class="form-control input-sm dib pull-right input-style1" id="queryName" value="" placeholder="请输入X轴value值" ng-model="Xvalue" style="width: 250px;" />
+		<span class="dib pull-right"> value值：</span>
+		<textarea ng-init="textInput()" id="code" name="code" ng-model="codes">
+			
+		</textarea>
+		<div class="martop-15">
+			<span class="dib">生成结果：</span>
+			<!--<button class="btn btn-sm btn-demo btn-outline btn-rounded dib pull-right">下载</button>-->
+		</div>
+		<div ng-hide="loading" class="loading-img" ><img src="assets/img/loading.gif" style="height: 22px;"/>&nbsp;<span>疯狂加载中,稍等片刻...</span></div>
+		<div ng-hide="noExecute" class="loading-img"><span>当前未执行任何项目,暂无结果!</span></div>		
+		<!--<div ng-hide="failExecute" class="loading-img"><span>查询结果失败,请检查语句或稍后重试!</span></div>-->	
+		
+		<div class="content-panel query-1-2">
+
+			<div id="consult" class="echarts-1"></div>
+		</div>
+		
+		
+		<!--执行结果的表格-->
+		<!--<div style="overflow-x:auto ;" ng-hide="hideTable">
+			<table class="table color-table table-bordered table-center" cellspacing="0" cellpadding="0">
+				<thead>
+					<tr>
+						820, 932, 901, 934, 1290, 1330, 1320
+						
+						'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'
+						
+						<th ng-repeat="th in theadNames" ng-bind="th"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="contents in lists">
+						<td ng-repeat="th in theadNames" ng-bind="contents[th]"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>-->
+
+		<!--<nav class="dataTables_paginate paging_full_numbers text-center" ng-hide="hideTable">
+			<ul class="pagination" id="indexTable_paginate">
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="execute()">&laquo;</a>
+				</li>
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="execute(pageParams.pagePrev)">&lsaquo;</a>
+				</li>
+				<li ng-repeat="page in pageParams.pageArray" class="{{ pageParams.pageNum == page?'active':''}}">
+					<a href="" class="first paginate_button paginate_button" tabindex="0" ng-click="execute(page)" ng-bind="page"></a>
+				</li>
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="execute(pageParams.pageNext)">&rsaquo;</a>
+				</li>
+				<li>
+					<a href="" class="paginate_button" tabindex="0" ng-click="execute(pageParams.pages)">&raquo;</a>
+				</li>
+			</ul>
+		</nav>-->
+	</div>
+</div>

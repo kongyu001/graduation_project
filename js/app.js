@@ -16,15 +16,10 @@ var app =angular.module('QueryApp',['ui.router', 'ngCookies']);
         	templateUrl:"pages/music.html",
         	controller:"MusicController"
         })
-        .state("4",{
-        	url:"/video",
-        	templateUrl:"pages/video.html",
-        	controller:"VideoController"
-        })
          .state("5",{
-        	url:"/input",
-        	templateUrl:"pages/video.html",
-        	controller:"VideoController"
+        	url:"/edit",
+        	templateUrl:"pages/edit.html",
+        	controller:"EditController"
         });
         $urlRouterProvider.otherwise("/")
 

@@ -14,50 +14,6 @@
 	padding-bottom: 5px;
 }
 
-.drop-style {
-	margin-top: 5px;
-	margin-left: 12px;
-}
-
-.box-title {
-	margin-left: 20px;
-	top: 20px;
-	font-size: 16px;
-	color: #000000;
-}
-
-.padding-100 {
-	padding-left: 10px;
-	padding-right: 0px;
-}
-
-.padding-10 {
-	padding-left: 10px;
-}
-
-.padding-00 {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-.padding-05 {
-	padding-left: 0px;
-	padding-right: 5px;
-}
-
-.padding-r5 {
-	padding-right: 5px;
-}
-
-.padding-5 {
-	padding-left: 5px;
-}
-
-.box1-content {
-	font-size: 35px;
-	padding: 20px;
-}
-
 .color-1 {
 	color: #8a09d8;
 }
@@ -99,6 +55,21 @@
 	margin-right: 5px;
 }
 
+.man-png{
+	margin-top: 100px;
+	margin-bottom: 25px;
+	width: 75px;
+}
+
+.game-png{
+	width: 100%;
+	height: 550px;
+}
+.game-png2{
+	width: 100%;
+	height: 500px;
+}
+
 .query-1-1 {
 	margin-top: -10px;
 	width: 100%;
@@ -106,12 +77,17 @@
 }
 
 .query-1-2 {
-	margin-top: 5px;
 	width:100%;
-	height: 445px;
+	height: 500px;
 }
-
-
+.query-1-3 {
+	width:100%;
+	height: 400px;
+}
+.query-1-4 {
+	width:100%;
+	height: 600px;
+}
 .query-2-1 {
 	margin-top: 5px;
 	width: 100%;
@@ -119,28 +95,11 @@
 }
 
 
-.query-2-3 {
-	margin-top: 25px;
-	width: 100%;
-	height: 300px;
-}
 
-.query-3-1 {
-	margin-top: 5px;
+.query-2-2 {
+	/*margin-top:5px;*/
 	width: 100%;
-	height: 320px;
-}
-
-.query-3-2 {
-	margin-top: 5px;
-	width: 100%;
-	height: 340px;
-}
-
-.query-3-3 {
-	margin-top: 5px;
-	width: 100%;
-	height: 665px;
+	height: 750px;
 }
 
 .echarts-1 {
@@ -151,21 +110,13 @@
 
 .echarts-2 {
 	height: 100%;
-	width: 100%;
+	width: 50%;
 	margin-left: 10px;
 }
 
 .echarts-3 {
-	height: 100%;
+	height: 50%;
 	width: 100%;
-	margin-left: 20px;
-	margin-top: -30px;
-}
-
-.echarts-4 {
-	width: 100%;
-	height: 280px;
-	margin-left: 10px;
 }
 
 .map-weibo {

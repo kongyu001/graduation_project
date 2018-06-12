@@ -16,3 +16,4 @@
 //var HOST_URL = "http://192.168.2.134:8099";
 //var HOST_URL = "http://192.168.7.43/guanji_admin";
 //var HOST_URL = "http://192.168.118.89:8901";   //天人;
+var HOST_URL="https://www.easy-mock.com/mock/5a27690ed2938d01f9d95f99/data/"

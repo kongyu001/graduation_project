@@ -15,7 +15,7 @@
     <link href="assets/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
     <!-- Menu CSS -->
     <link href="assets/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../favicon.ico">
+    <!--<link rel="shortcut icon" href="../favicon.ico">-->
 	<!--<link rel="stylesheet" type="text/css" href="assets/sidebar-nav/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="assets/sidebar-nav/css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="assets/sidebar-nav/css/component.css" />-->
@@ -42,7 +42,11 @@
 	<link rel="stylesheet" href="assets/code/show-hint.css" />
 	<script type="text/javascript" src="assets/code/show-hint.js"></script>
 	<script src="assets/code/sql-hint.js"></script>
-	
+	<!--Ol-->
+	<link rel="stylesheet" href="https://openlayers.org/en/v4.4.2/css/ol.css" type="text/css">
+	<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
+	<script src="https://openlayers.org/en/v4.4.2/build/ol.js"></script>
+	 
 	<!--自定义覆盖样式-->
 	<link rel="stylesheet" type="text/css" href="assets/css/customStyle.css" />
 	 <!--[if lt IE 9]>
@@ -89,7 +93,7 @@
                     <!--<li class="sidebar-search hidden-sm hidden-md hidden-lg">
                     </li>-->
                     <li> 
-                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/weibo')">
+                    	<a href="" ui-sref="1" class="waves-effect" ng-class="getNavItemClass('/')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >微博</span>
                     	</a> 
@@ -103,17 +107,11 @@
                     <li> 
                     	<a href="" ui-sref="3" class="waves-effect" ng-class="getNavItemClass('/music')">
                     		<i class="ti-dashboard p-r-10"></i> 
-                    		<span class="hide-menu" >数字音乐</span>
-                    	</a> 
-                    </li>
-                    <li> 
-                    	<a href=""  ui-sref="4" class="waves-effect" ng-class="getNavItemClass('/video')">
-                    		<i class="ti-dashboard p-r-10"></i> 
-                    		<span class="hide-menu" >在线视频</span>
+                    		<span class="hide-menu" >数字音乐与视频</span>
                     	</a> 
                     </li>
                      <li> 
-                    	<a href=""  ui-sref="5" class="waves-effect" ng-class="getNavItemClass('/input')">
+                    	<a href=""  ui-sref="5" class="waves-effect" ng-class="getNavItemClass('/edit')">
                     		<i class="ti-dashboard p-r-10"></i> 
                     		<span class="hide-menu" >导入数据</span>
                     	</a> 
@@ -139,7 +137,9 @@
     <!-- /#wrapper -->
     <!-- jQuery -->
     <!-- js placed at the end of the document so the pages load faster -->
-   
+   	  <!--Openlayers-->
+    <script type="text/javascript" include="jquery,widgets.alert" src="js/include-web.js"></script>
+	<script type="text/javascript" src="dist/include-openlayers.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="js/lib/jquery.cookie.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -151,6 +151,8 @@
       <!--百度地图-->
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=1XjLLEhZhQNUzd93EjU5nOGQ"></script>
     <script src="http://mapv.baidu.com/build/mapv.min.js"></script>
+  	
+	<!--<script type="text/javascript" include="jquery,bootstrap" src="openlayer/js/include-web.js"></script>-->
     <!-- Bootstrap Core JavaScript -->
     <script src="assets/bootstrap/dist/js/tether.min.js"></script>
     <script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -158,9 +160,17 @@
     <!--漂浮消息-->
 	<link href="assets/css/toastr.min.css" rel="stylesheet">
 	<script src="assets/js/toastr.min.js"></script>
+	
     <!--echarts-->
    	<script src="assets/js/echarts/echarts.js"></script>
     <script src="assets/js/echarts/esl.js"></script>
+    <script src="assets/js/echarts/chart/map.js"></script>
+   	<!--hcharts-->
+   	 <!--<link rel="icon" href="https://static.jianshukeji.com/hcode/images/favicon.ico">-->
+     <script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>
+     <script src="https://img.hcharts.cn/highcharts/modules/exporting.js"></script>
+     <script src="https://img.hcharts.cn/highcharts/modules/wordcloud.js"></script>
+     <script src="https://img.hcharts.cn/highcharts/modules/oldie.js"></script>
     <!--ztree树-->
     <link rel="stylesheet" href="assets/ztree/zTreeStyle.css" />
     <script src="assets/ztree/jquery.ztree.core.js"></script>
@@ -203,11 +213,7 @@
 	<script src="js/controller/weiboController.js"></script>
 	<script src="js/controller/gameController.js"></script>
 	<script src="js/controller/musicController.js"></script>
-	<script src="js/controller/videoController.js"></script>
-	<script src="js/controller/queryController.js"></script>
-	<!--<script src="js/controller/dataBaseController.js"></script>
-	<script src="js/controller/dashboardController.js"></script>
-	<script src="js/controller/dayController.js"></script>-->
+	<script src="js/controller/editController.js"></script>
 </body>
 
 </html>
