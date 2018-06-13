@@ -2,7 +2,7 @@ var app =angular.module('QueryApp',['ui.router', 'ngCookies']);
     app.config(function($stateProvider,$urlRouterProvider){
     	$stateProvider
         .state("1",{
-        	url:"/",
+        	url:"/weibo",
         	templateUrl:"pages/weibo.html",
         	controller:"WeiBoController"
         })

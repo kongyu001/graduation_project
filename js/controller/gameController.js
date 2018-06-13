@@ -462,7 +462,6 @@ app.controller('GameController', function($scope, $http, $cookies) {
 	
 	//获取---环图3的数据,并调用生成函数
 	$scope.getDataPie3 = function() {
-	console.log(chartConfig3)
 			var	chartConfig1 = {
 					title: "  ",
 					name:"try",

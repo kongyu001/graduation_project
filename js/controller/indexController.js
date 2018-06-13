@@ -1,10 +1,10 @@
 app.controller('IndexController', function($rootScope,$scope, $http, $location,$cookies) {
 	$scope.getNavItemClass = function(path) {
 		var url = $location.url();
-//		console.log(url)
+		console.log(url)
 		if(url === "/") {
 			url = "/weibo";	
-		
+		location.href = "index.html#/weibo"
 		}
 //		console.log(url)
 		if(url == path) {

@@ -128,7 +128,29 @@ app.controller('EditController', function($scope, $http, $cookies) {
 				show : true
 			}
 		}
-	},
+	},itemStyle: {
+					normal: {
+						shadowBlur: 10,
+						shadowColor: 'rgba(120, 36, 50, 0.5)',
+						shadowOffsetY: 5,
+						color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+							offset: 0,
+							color: 'rgb(251, 118, 123)'
+						}, {
+							offset: 1,
+							color: 'rgb(204, 46, 72)'
+						}])
+					}
+				},
+				 label: {
+      normal: {
+          show: true,
+          position: 'top',
+          textStyle: {
+            color: 'black'
+          }
+      }
+   },
 			xAxis: {
 				type: 'category',
 				data: xvalue

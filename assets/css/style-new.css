@@ -1,11 +1,9 @@
-/*所有类似query-1-1的命名,意义为query的第*页的第*个图*/
 
 .main-chart {
 	padding-top: 20px;
 }
 
 
-/*Content Panel*/
 
 .content-panel {
 	background: #ffffff;
@@ -70,6 +68,10 @@
 	height: 500px;
 }
 
+.music-png{
+	width: 100%;
+	height: 720px;
+}
 .query-1-1 {
 	margin-top: -10px;
 	width: 100%;
@@ -85,8 +87,9 @@
 	height: 400px;
 }
 .query-1-4 {
+	margin-top: 15px;
 	width:100%;
-	height: 600px;
+	height: 720px;
 }
 .query-2-1 {
 	margin-top: 5px;
@@ -109,15 +112,15 @@
 }
 
 .echarts-2 {
-	height: 100%;
-	width: 50%;
-	margin-left: 10px;
+	height: 33%;
+	width: 100%;
 }
 
 .echarts-3 {
 	height: 50%;
 	width: 100%;
 }
+
 
 .map-weibo {
 	width: 100%;
